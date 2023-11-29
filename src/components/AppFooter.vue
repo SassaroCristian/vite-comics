@@ -5,27 +5,27 @@ export default {
         return {
             items: [
                 {
-                    src: "c.png",
+                    src: "img/c.png",
                     text: "DIGITAL COMICS",
                     href: "#",
                 },
                 {
-                    src: "buy-comics-merchandise.png",
+                    src: "img/buy-comics-merchandise.png",
                     text: "DC MERCHANDISE",
                     href: "#",
                 },
                 {
-                    src: "buy-comics-subscriptions.png",
+                    src: "img/buy-comics-subscriptions.png",
                     text: "SUBSCRIPTION",
                     href: "#",
                 },
                 {
-                    src: "buy-comics-shop-locator.png",
+                    src: "img/buy-comics-shop-locator.png",
                     text: "COMICS SHOP LOCATOR",
                     href: "#",
                 },
                 {
-                    src: "buy-dc-power-visa.svg",
+                    src: "img/buy-dc-power-visa.svg",
                     text: "DC POWER VISA",
                     href: "#",
                 }
@@ -33,43 +33,26 @@ export default {
         };
     }
 };
+// methods: {
+//     getImagePath(img) {
+//         return new URL('..img/${src}', import.meta.url).href;
+//     }
+// }
 </script>
 
 <template>
-    <div class="bg-blue h-32 flex">
-        <div class="m-auto grid grid-cols-5 gap-4">
-            <div class="flex items-center col-span-1">
-                <img class="w-9" src="img/c.png" alt="">
-                <p class="pl-4 text-xs">DIGITAL COMICS</p>
-            </div>
-            <div class="flex items-center col-span-1">
-                <img class="w-9" src="img/buy-comics-merchandise.png" alt="">
-                <p class="pl-4 text-xs">DIGITAL COMICS</p>
-            </div>
-            <div class="flex items-center col-span-1">
-                <img class="w-9" src="img/buy-comics-subscriptions.png" alt="">
-                <p class="pl-4 text-xs">DIGITAL COMICS</p>
-            </div>
-            <div class="flex items-center col-span-1 ml-5">
-                <img id="shop-locator" src="img/buy-comics-shop-locator.png" alt="">
-                <p class="pl-4 text-xs">DIGITAL COMICS</p>
-            </div>
-            <div class="flex items-center col-span-1">
-                <img class="w-9" src="img/buy-dc-power-visa.svg" alt="">
-                <p class="pl-4 text-xs">DIGITAL COMICS</p>
-            </div>
+    <div class="grid grid-cols-5 gap-4 bg-blue h-32 ">
+        <div class="flex items-center justify-center col-span-1" v-for="(item, index) in items" :key="index">
+            <img class="w-10 h-10" :src="item.src" alt="">
+            <p class="pl-4 text-xs">{{ item.text }}</p>
         </div>
     </div>
-    <!-- <div class="card" v-for=" item in items">
-                                                        <img :src="item.src" alt="">
-                                                        <p>{{ item.text }}</p>
-                                                    </div> -->
-    <div class="w-screen img-bg">
+    <div class=" img-bg">
         <div class="m-auto w-9/12 flex h-96 overflow-hidden">
             <div class="w-screen img-bg">
                 <div class="m-auto w-9/12 flex h-96 overflow-hidden">
                     <div class=" pt-10 pr-10 pb-10 flex flex-col justify-center">
-                        <h1>DC COMICS</h1>
+                        <h1 class="font-bold">DC COMICS</h1>
                         <ul>
                             <li>Characters</li>
                             <li>Characters</li>
@@ -80,7 +63,7 @@ export default {
                             <li>Characters</li>
                             <li>Characters</li>
                         </ul>
-                        <h1 class="pt-5">SHOP</h1>
+                        <h1 class="pt-5 font-bold">SHOP</h1>
                         <ul>
                             <li>shop DC</li>
                             <li>shop DC Collectables</li>
@@ -89,7 +72,7 @@ export default {
 
                     <div class=" pt-10 pr-10 flex flex-col ">
 
-                        <h1>DC</h1>
+                        <h1 class="font-bold">DC</h1>
                         <ul>
                             <li>shop DC</li>
                             <li>shop DC</li>
@@ -105,7 +88,7 @@ export default {
                     </div>
 
                     <div class="pt-10 flex flex-col ">
-                        <h1>SITES</h1>
+                        <h1 class="font-bold">SITES</h1>
                         <ul>
                             <li>shop DC</li>
                             <li>shop DC</li>
@@ -116,12 +99,12 @@ export default {
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="">
                 <img id="dc-logo" class="pl-20" src="img/dc-logo-bg.png" alt="">
             </div>
         </div>
     </div>
-    <div class="w-screen bg-gray-800 text-white py-4">
+    <div class=" bg-gray-800 text-white py-4">
         <div class="m-auto w-9/12 flex justify-between items-center">
             <div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -149,6 +132,11 @@ export default {
 .img-bg {
     background-image: url('img/footer-bg.jpg');
     background-size: cover;
+
+}
+
+#dc-logo {
+    width: 1500px;
 }
 
 #shop-locator {
